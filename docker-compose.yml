@@ -1,0 +1,12 @@
+version: '2'
+services:
+  frontend:
+    build: ./frontend
+    expose:
+      - "80"
+  data:
+    build: ./data
+    depends_on:
+      -frontend
+    expose:
+      - "8080"

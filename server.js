@@ -12,6 +12,12 @@ app.get('/', function (req, res) {
   res.render('index.html');
 });
 
+app.get('/rest', function (req, res) {
+  res.json({ username: 'Flavio' });
+});
+
+
+
 //start a server on port 80 and log its start to our console
 var server = app.listen(80, function () {
 

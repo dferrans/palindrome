@@ -7,6 +7,6 @@ services:
   data:
     build: ./data
     depends_on:
-      -frontend
+      - frontend
     expose:
       - "8080"

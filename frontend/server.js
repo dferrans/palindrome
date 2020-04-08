@@ -12,6 +12,11 @@ app.get('/', function (req, res) {
   res.render('index.html');
 });
 
+
+app.get('/info.html', function (req, res) {
+  res.render('info.html');
+});
+
 app.get('/rest', function (req, res) {
   res.json({ username: 'Flavio' });
 });

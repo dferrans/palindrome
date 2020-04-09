@@ -64,9 +64,10 @@ RUN cd /usr/local/bin \
 ENV PYTHONPATH /usr/lib/python3/dist-packages:$PYTHONPATH
 
 #CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: https://balena.io/docs"]
-CMD ["/bin/bash", "-c", "echo 'Single Service Application'; sleep 5"]
+
  RUN curl -SLO "https://raw.githubusercontent.com/balena-io-library/base-images/8accad6af708fca7271c5c65f18a86782e19f877/scripts/assets/tests/test-stack@python.sh" \
   && echo "Running test-stack@python" \
   && chmod +x test-stack@python.sh \
   && bash test-stack@python.sh \
   && rm -rf test-stack@python.sh
+CMD ["python", "-m SimpleHTTPServer 80"]
